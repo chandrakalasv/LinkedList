@@ -5,8 +5,8 @@ public interface IList<T> {
     void addFirst(T data);
     void append(T data);
     void insert(int pos,T data);
-    int pop(T data);
-    int popLast(T data);
+    void pop();
+    void popLast();
     boolean search(T data);
     int index(T data);
 }

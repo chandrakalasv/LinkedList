@@ -58,14 +58,13 @@ public class LinkedList<T> implements IList<T> {
     }
 
     @Override
-    public int pop(T data) {
+    public void pop() {
         Node temp = head;
         head = temp.next;
-        return (int) temp.data;
     }
 
     @Override
-    public int popLast(T data) {
+    public void popLast() {
         Node lastNode = head;
         Node previousNode = null;
         while (lastNode.next != null) {
@@ -73,7 +72,6 @@ public class LinkedList<T> implements IList<T> {
             lastNode = lastNode.next;
         }
         previousNode.next = null;
-        return (int) lastNode.data;
     }
 
     @Override

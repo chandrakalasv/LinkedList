@@ -2,6 +2,7 @@ package com.bridge.list;
 
 public interface IList<T> {
     void add(T data);
+    void addFirst(T data);
     void append(T data);
     void insert(T previous, T next, T data);
     int pop(T data);

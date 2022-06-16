@@ -15,17 +15,17 @@ public class LinkedList<T> implements IList<T> {
         temp.next = node;
     }
 
-//    @Override
-//    public void set(T data) {
-//        Node newNode = new Node(data);
-//        if (head == null) {
-//            head = newNode;
-//            return;
-//        }
-//        newNode.data = data;
-//        newNode.next = head;
-//        head = newNode;
-//    }
+    @Override
+    public void addFirst(T data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+        newNode.data = data;
+        newNode.next = head;
+        head = newNode;
+    }
     @Override
     public void append(T data) {
         Node newNode = new Node(data);

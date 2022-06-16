@@ -7,6 +7,7 @@ public class ListMain {
         list.add(56);
         list.add(70);
         list.insert(1, 30);
+        list.pop(56);
         System.out.println(list);
     }
 }

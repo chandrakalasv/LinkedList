@@ -9,4 +9,6 @@ public interface IList<T> {
     void popLast();
     boolean search(T data);
     int index(T data);
+    boolean remove(T data);
+    int size();
 }

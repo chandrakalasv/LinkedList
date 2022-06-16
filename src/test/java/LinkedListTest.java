@@ -24,4 +24,17 @@ public class LinkedListTest {
         boolean result = list.search(40);
         Assert.assertEquals(true, result);
     }
+
+    @Test
+    public void searchGivenNode_WhenFind_ShouldDeleteNodeAndReturnSize() {
+        LinkedList list = new LinkedList();
+        list.add(56);
+        list.add(30);
+        list.add(70);
+        list.insert((list.index(30) + 1), 40);
+        list.search(40);
+        list.remove(40);
+        int size = list.size();
+        Assert.assertEquals(size,3);
+    }
 }

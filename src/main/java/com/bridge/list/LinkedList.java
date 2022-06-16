@@ -90,14 +90,40 @@ public class LinkedList<T> implements IList<T> {
     }
     @Override
     public int index(T data) {
-        int i = 0;
+        int index = 0;
 
         Node temp = head;
         while (temp != null && !temp.data.equals(data)) {
             temp = temp.next;
-            i++;
+            index++;
         }
-        return i;
+        return index;
+    }
+    @Override
+    public boolean remove(T num) {
+        if(head.data.equals(num)){
+            head = head.next;
+            return true;
+        }
+        Node previous = head;
+        Node requiredData ;
+        while (previous.next != null && !previous.next.data.equals(num)){
+            previous = previous.next;
+        }
+        requiredData = previous.next;
+        previous.next = requiredData.next;
+        return true ;
+    }
+    @Override
+    public int size() {
+      Node temp=head;
+        int count = 0;
+        while(temp!=null)
+        {
+            temp=temp.next;
+            count++;
+        }
+        return count;
     }
 
     @Override

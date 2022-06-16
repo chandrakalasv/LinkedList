@@ -13,4 +13,15 @@ public class LinkedListTest {
         boolean result = list.search(30);
         Assert.assertTrue(result);
     }
+
+    @Test
+    public void searchGivenNode_WhenFind_ShouldInsertDataAsNextNode() {
+        LinkedList list = new LinkedList();
+        list.add(56);
+        list.add(30);
+        list.add(70);
+        list.insert((list.index(30) + 1), 40);
+        boolean result = list.search(40);
+        Assert.assertEquals(true, result);
+    }
 }

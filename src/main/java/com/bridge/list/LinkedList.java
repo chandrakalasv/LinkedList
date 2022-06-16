@@ -2,18 +2,30 @@ package com.bridge.list;
 
 public class LinkedList<T> implements IList<T> {
     Node head;
-
-    @Override
-    public void add(T data) {
-        Node newNode = new Node(data);
+    public void add(T num) {
+        Node node = new Node(num);
         if (head == null) {
-            head = newNode;
+            head = node;
             return;
         }
-        newNode.data = data;
-        newNode.next = head;
-        head = newNode;
+        Node  temp = head;
+        while(temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = node;
     }
+
+//    @Override
+//    public void set(T data) {
+//        Node newNode = new Node(data);
+//        if (head == null) {
+//            head = newNode;
+//            return;
+//        }
+//        newNode.data = data;
+//        newNode.next = head;
+//        head = newNode;
+//    }
     @Override
     public void append(T data) {
         Node newNode = new Node(data);

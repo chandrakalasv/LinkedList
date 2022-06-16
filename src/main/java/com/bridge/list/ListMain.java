@@ -5,8 +5,8 @@ public class ListMain {
         System.out.println(".....linked list data structure......");
         IList<Integer> list = new LinkedList();
         list.add(56);
-        list.append(30);
-        list.append(70);
+        list.add(70);
+        list.insert(1, 30);
         System.out.println(list);
     }
 }

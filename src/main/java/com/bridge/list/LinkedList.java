@@ -40,18 +40,21 @@ public class LinkedList<T> implements IList<T> {
         temp.next = newNode;
     }
     @Override
-    public void insert(T previous, T next, T data) {
+    public void insert(int pos,T data) {
         Node newNode = new Node(data);
-        Node temp = head;
-        Node nextNode = temp.next;
-
-        while (!temp.data.equals(previous) && !(nextNode.data.equals(next))) {
-            temp = temp.next;
-            nextNode = temp.next;
+        if(pos == index((T) head.data)){
+            newNode.next = head;
+            head = newNode;
+            return;
         }
-
-        temp.next = newNode;
-        newNode.next = nextNode;
+        Node requiredNode = head.next;
+        Node previousNode = head;
+        while(pos != index((T) requiredNode.data)){
+            previousNode = requiredNode;
+            requiredNode = requiredNode.next;
+        }
+        newNode.next = requiredNode;
+        previousNode.next = newNode;
     }
 
     @Override
